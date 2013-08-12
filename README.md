@@ -46,6 +46,8 @@ Either clone this git repository or download piglow-example.py. You can then run
 
 The Python code is designed to show you how to talk to the IC on the PiGlow board so that you can extend it to do other more exciting things!
 
+Want a specific example of how to do something? Get in touch! We should be able to knock up an example or at least point you in the right direction. Just e-mail support@pimoroni.com
+
 Other support for PiGlow
 ------------------------
 
