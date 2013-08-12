@@ -36,3 +36,19 @@ Then we install the i2c libraries and Python support:
     sudo apt-get install python-smbus
 
 Then reboot your Pi!
+
+Running the example Python code
+-------------------------------
+
+Either clone this git repository or download piglo-example.py. You can then run the sample by entering:
+
+    sudo python piglow-example.py
+
+The Python code is designed to show you how to talk to the IC on the PiGlow board so that you can extend it to do other more exciting things!
+
+Other support for PiGlow
+------------------------
+
+*Gordon Henderson* (@drogon on Twitter) has very kindly added support for PiGlow into his very popular wiringPi library and even includes a basic command line tool that you can use to control your PiGlow! http://wiringpi.com/dev-lib/piglow/
+
+*Simon Walters* (@cymplecy) has added awesome PiGlow support to his Raspberry Pi GPIO Scratch library: http://cymplecy.wordpress.com/2013/04/23/scratch-gpio-v2-add-on-modulesboards/ (see towards the bottom of the post)
