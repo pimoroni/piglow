@@ -52,7 +52,7 @@ values = [0x01,0x02,0x04,0x08,0x10,0x18,0x20,0x30,0x40,0x50,0x60,0x70,0x80,0x90,
 piglow = PiGlow(1)
 
 # loop forever, i mean why would we ever want to stop now the party has started?
-# Although it might be worth having an exit option in case someone complains when you're playing :)	
+# you can however use Ctrl+C to stop the script and reset the LEDs to off state
 try:
         while True:
                 # pop the first value off then drop it back on again - this just cycles the values around
@@ -63,10 +63,9 @@ try:
 
                 # sleep for a bit, don't go too fast!
                 time.sleep(0.1)
+                
 except KeyboardInterrupt:
-	# Set all the LEDs to "off"
+	# set all the LEDs to "off" when Ctrl+C is pressed before exiting
         values = [0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00]
-        
-        # Update the piglow (so as not annoy anyone, just in case :) )
         piglow.update_leds(values)
 
