@@ -59,3 +59,11 @@ More information
 ----------------
 
 For more information the datasheet for the SN3218 IC is included in this repository which outlines the complete communication protocol for the chip.
+
+For those wanting to wire up their PiGlow in other ways these are the GPIO pins used by the module:
+
+- P1 & P17 (3V3)
+- P2 (5V)
+- P14 (GND)
+- P3 (SDA)
+- P5 (SCL)
