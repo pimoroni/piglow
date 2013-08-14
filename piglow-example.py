@@ -31,8 +31,8 @@ class PiGlow:
 		self.write_i2c(CMD_SET_PWM_VALUES, values)
 		self.write_i2c(CMD_UPDATE, 0xFF)
 
-    # a helper that writes the given value or list of values to the SN3218 IC
-    # over the i2c protocol
+	# a helper that writes the given value or list of values to the SN3218 IC
+	# over the i2c protocol
 	def write_i2c(self, reg_addr, value):
         # if a single value is provided then wrap it in a list so we can treat
         # all writes in teh same way
