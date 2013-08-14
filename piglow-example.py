@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#
 # Sample script for PiGlow that creates a continuous whirly vortex animation
 #
 # Please see our GitHub repository for more information: https://github.com/pimoroni/piglow
