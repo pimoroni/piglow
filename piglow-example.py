@@ -47,9 +47,16 @@ class PiGlow:
 # update_leds() function to actually update the LDEs
 values = [0x01,0x02,0x04,0x08,0x10,0x18,0x20,0x30,0x40,0x50,0x60,0x70,0x80,0x90,0xA0,0xC0,0xE0,0xFF]
 
-# create an instance of our PiGlow class and tell it that "1" is the I2C bus
-# index (should be 0 for old old old Pis)
-piglow = PiGlow(1)
+# Work out what I2C bus we need to use - 0 for old Pis, 1 for newer Pis
+bus = 1
+for info in open("/proc/cpuinfo","r").readlines():
+  if info.startswith("Revision"):
+     if "0001" in info or "0002" in info:
+        print "Old Raspberry Pi detected"
+        bus = 0
+
+# create an instance of our PiGlow class for the required I2C bus
+piglow = PiGlow(bus)
 
 # loop forever, i mean why would we ever want to stop now the party has started?
 # you can however use Ctrl+C to stop the script and reset the LEDs to off state
