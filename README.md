@@ -55,6 +55,10 @@ Other support for PiGlow
 
 **Simon Walters** (@cymplecy) has added awesome PiGlow support to his Raspberry Pi GPIO Scratch library: http://cymplecy.wordpress.com/2013/08/12/scratch-gpio-piglow-support/
 
+**Jason Barnett** has put together a great Python class and a load of samples: https://github.com/Boeeerb/PiGlow
+
+**Ben Leb** has forked Jasons project and tidied up the code a bit while adding gamma correction: https://github.com/benleb/PyGlow
+
 More information
 ----------------
 
