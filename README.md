@@ -57,7 +57,7 @@ Other support for PiGlow
 
 **Jason Barnett** has put together a great Python class and a load of samples: https://github.com/Boeeerb/PiGlow
 
-**Ben Leb** has forked Jasons project and tidied up the code a bit while adding gamma correction: https://github.com/benleb/PyGlow
+**Ben Lebherz** has forked Jasons project and tidied up the code a bit while adding gamma correction: https://github.com/benleb/PyGlow
 
 More information
 ----------------
