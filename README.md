@@ -59,6 +59,8 @@ Other support for PiGlow
 
 **Ben Lebherz** has forked Jasons project and tidied up the code a bit while adding gamma correction: https://github.com/benleb/PyGlow
 
+**Manuel Ernst** has created a Node.js library: https://github.com/zaphod1984/node-piglow
+
 More information
 ----------------
 
