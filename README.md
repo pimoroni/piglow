@@ -6,30 +6,25 @@ PiGlow is a small add on board for the Raspberry Pi that provides 18 individuall
 Setting up your Raspberry Pi
 ----------------------------
 
+###Pre-Requisites
+
 PiGlow is based on an IC that communicates via i2c protocol. We need to enable i2c communication on your Raspberry Pi for it to work.
 
-Enable the i2c driver modules by editing the modules config file:
+####The easy way:
 
-    sudo nano /etc/modules
+```bash
+curl get.pimoroni.com/i2c | bash
+```
 
-Then either add or ensure the following lines are at the end of the file:
+####Using raspi-config
 
-    i2c-dev
-    i2c-bcm2708
+```bash
+sudo raspi-config
+```
 
-You may also need to ensure the driver modules are not blacklisted by editing the blacklist config file:
+Then navigate to **Advanced Options**, then **I2C** and answer Yes to both questions.
 
-    sudo nano /etc/modprobe.d/raspi-blacklist.conf
-
-Ensure that if the following two lines exist in that config file that you comment them out by adding a # sign at the start of the line. So:
-
-    blacklist spi-bcm2708
-    blacklist i2c-bcm2708
-
-...should become...
-
-    # blacklist spi-bcm2708
-    # blacklist i2c-bcm2708
+###SMBUS Python Library
 
 Then we install the i2c libraries and Python support:
 
