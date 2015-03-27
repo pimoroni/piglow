@@ -1,10 +1,10 @@
-PiGlow sample code and instructions
-===================================
+#PiGlow sample code and instructions
+
+Available from Pimoroni: http://shop.pimoroni.com/products/piglow
 
 PiGlow is a small add on board for the Raspberry Pi that provides 18 individually controllable LEDs. You can use it for all sorts of things! And of course, it fits inside a Pibow!
 
-Setting up your Raspberry Pi
-----------------------------
+##Setting up your Raspberry Pi
 
 ###Pre-Requisites
 
@@ -32,8 +32,7 @@ Then we install the i2c libraries and Python support:
 
 Then reboot your Pi!
 
-Running the example Python code
--------------------------------
+##Running the example Python code
 
 Either clone this git repository or download piglow-example.py. You can then run the sample by entering:
 
@@ -43,8 +42,7 @@ The Python code is designed to show you how to talk to the IC on the PiGlow boar
 
 Want a specific example of how to do something? Get in touch! We should be able to knock up an example or at least point you in the right direction. Just e-mail support@pimoroni.com
 
-Other support for PiGlow
-------------------------
+##Other support for PiGlow
 
 **Gordon Henderson** (@drogon on Twitter) has very kindly added support for PiGlow into his very popular wiringPi library and even includes a basic command line tool that you can use to control your PiGlow! http://wiringpi.com/dev-lib/piglow/
 
@@ -56,8 +54,7 @@ Other support for PiGlow
 
 **Manuel Ernst** has created a Node.js library: https://github.com/zaphod1984/node-piglow
 
-More information
-----------------
+##More information
 
 For more information the datasheet for the SN3218 IC is included in this repository which outlines the complete communication protocol for the chip.
 
