@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import time, pimglow as piglow
+import time, piglow
 
 i = 0
 
