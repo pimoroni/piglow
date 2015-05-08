@@ -1,46 +1,78 @@
-#PiGlow sample code and instructions
+#PiGlow
 
-Available from Pimoroni: http://shop.pimoroni.com/products/piglow
+This repository contains the library and examples for the PiGlow board.
 
-PiGlow is a small add on board for the Raspberry Pi that provides 18 individually controllable LEDs. You can use it for all sorts of things! And of course, it fits inside a Pibow!
+## Easy Install
 
-##Setting up your Raspberry Pi
-
-###Pre-Requisites
-
-PiGlow is based on an IC that communicates via i2c protocol. We need to enable i2c communication on your Raspberry Pi for it to work.
-
-####The easy way:
+To install on your Raspberry Pi, make sure you're running Raspbian, open LXTerminal or make your way to the terminal and run:
 
 ```bash
-curl get.pimoroni.com/i2c | bash
+curl get.pimoroni.com/piglow | bash
 ```
 
-####Using raspi-config
+This script will install the library and copy the examples in this repository to `~/Pimoroni/piglow`
 
-```bash
-sudo raspi-config
+## Backwards Compatibility
+
+The PiGlow Python library is designed to support examples written for Jason's PiGlow library found here: https://github.com/Boeeerb/PiGlow
+
+It's compatible with the examples, and we've ported some over to show you how it's done.
+
+## Using PiGlow
+
+To use the piglow library, you'll probably want to start by importing it:
+
+```python
+import piglow
 ```
 
-Then navigate to **Advanced Options**, then **I2C** and answer Yes to both questions.
+Now, you can turn some LEDs on:
 
-###SMBUS Python Library
+```python
+piglow.red(64)
+```
 
-Then we install the i2c libraries and Python support:
+Nothing will happen yet, you've got to update PiGlow with your changes. Why? Because it's quicker! If you're setting up a pattern it costs time and resources to redraw every step of that setup to the PiGlow, so we don't do that. Instead you need to call `show` like so:
 
-    sudo apt-get install python-smbus
+```python
+piglow.show()
+```
 
-Then reboot your Pi!
+A bug is a feature you can't turn off, however, so if you want to change that behaviour you can set it after importing piglow:
 
-##Running the example Python code
+```python
+piglow.auto_update = True
+```
 
-Either clone this git repository or download piglow-example.py. You can then run the sample by entering:
+This will turn on auto update, refreshing the PiGlow after each change so you don't have to.
 
-    sudo python piglow-example.py
+##Function Reference
 
-The Python code is designed to show you how to talk to the IC on the PiGlow board so that you can extend it to do other more exciting things!
+### Settings
+* `auto_update` - Set to True or False, determines if the PiGlow should automatically update after each LED change
+* `clear_on_exit` - Set to True or False, determines if the PiGlow should be cleared on exit
 
-Want a specific example of how to do something? Get in touch! We should be able to knock up an example or at least point you in the right direction. Just e-mail support@pimoroni.com
+### Colours
+* `white( value from 0 to 255 )`
+* `blue( value from 0 to 255 )`
+* `green( value from 0 to 255 )`
+* `yellow( value from 0 to 255 )`
+* `orange( value from 0 to 255 )`
+* `red( value from 0 to 255 )`
+
+### Arm, Spoke, Leg, they're all the same thing!
+
+`arm( index from 0 to 2, value from 0 to 255 )`
+
+### Multiple LEDs in various different ways
+
+The `set` method accepts a list of LEDs, a list of values, or a single LED or value, or any permutation therein:
+
+`set(0, 255)` - sets LED 0 to full brightness
+
+`set([1,3,5,7,9,11,13,15,17],255)` - sets all odd LEDs to full brightness
+
+`set(0,[50,50,50])` - let the 3 LEDs starting at index 0 to 50 brightness
 
 ##Other support for PiGlow
 
@@ -65,3 +97,7 @@ For those wanting to wire up their PiGlow in other ways these are the GPIO pins 
 - P14 (GND)
 - P3 (SDA)
 - P5 (SCL)
+
+##Special Thanks
+
+A special thanks for Jason Barnett for carrying the PiGlow torch with his original library.
