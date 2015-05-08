@@ -1,4 +1,4 @@
-#PiGlow
+![Piglow](piglow-logo.jpg)
 
 This repository contains the library and examples for the PiGlow board.
 
