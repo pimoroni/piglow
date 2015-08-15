@@ -23,7 +23,7 @@ SOFTWARE.
 
 from distutils.core import setup
 
-classifiers = ['Development Status :: 4 - Beta',
+classifiers = ['Development Status :: 5 - Production/Stable',
                'Operating System :: POSIX :: Linux',
                'License :: OSI Approved :: MIT License',
                'Intended Audience :: Developers',
@@ -34,7 +34,7 @@ classifiers = ['Development Status :: 4 - Beta',
                'Topic :: System :: Hardware']
 
 setup(name		= 'piglow',
-	version		= '1.1dev',
+	version		= '1.2',
 	author		= 'Philip Howard',
 	author_email	= 'phil@pimoroni.com',
 	description	= 'A module to drive the Pimoroni PiGlow board, based on the sn3218 i2c LED controller',

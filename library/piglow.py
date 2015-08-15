@@ -15,6 +15,8 @@ _legs = [
   [ 0,  1,  2,  3,  14, 12 ]
 ]
 
+_map = _legs[0] + _legs[1] + _legs[2]
+
 _values = [0] * 18
 
 colours = {
@@ -69,6 +71,16 @@ def get():
     return _values
 
 def set(leds, value):
+    if isinstance(value, list) and isinstance(leds, int):
+        offset = leds
+        leds = [(offset+x)%18 for x in range(len(value))]
+    if isinstance(leds, list):
+        leds = [ _map[led] for led in leds ]
+    elif isinstance(leds, int):
+        leds = _map[leds]
+    _set(leds, value)
+
+def _set(leds, value):
     '''
     Set one or more LEDs with one or more values
 
@@ -77,12 +89,15 @@ def set(leds, value):
     * values - A single value, or list of values to set
     '''
     global _values
+
     if isinstance(leds, list):
-        for led in leds:
-            if isinstance(value, list):
-                 _values[leds[led] % 18] = (value[led] % 256)
-            else:
+        if isinstance(value, list):
+            for x in range(len(value)):
+                _values[leds[x] % 18] = (value[x] % 256)
+        else:
+            for led in leds:
                 _values[led % 18] = (value % 256)
+
     elif isinstance(leds, int):
         leds = leds % 18
         if isinstance(value, list):
@@ -104,17 +119,17 @@ def ring(ring, value):
     Set the brightness of a specific ring
     '''
     ring = ring % 7
-    set([_legs[0][ring], _legs[1][ring], _legs[2][ring]], value)
+    _set([_legs[0][ring], _legs[1][ring], _legs[2][ring]], value)
 
 def leg_bar(leg, percentage):
     # 1530 = 6 * 255
     amount = int(1530.0 * percentage)
     for led in reversed(_legs[leg]):
-        set(led,255 if amount > 255 else amount)
+        _set(led,255 if amount > 255 else amount)
         amount = 0 if amount < 255 else amount - 255
 
 def leg(leg, intensity):
-    set(_legs[leg % 3], intensity)
+    _set(_legs[leg % 3], intensity)
 
 def led(led, intensity):
     '''Compatibility function for old PiGlow library
@@ -134,7 +149,7 @@ def single(leg, ring, intensity):
     * ring - ring index of LED
     * intensity - brightness from 0 to 255
     '''
-    set(_legs[leg % 3][ring % 7], intensity)
+    _set(_legs[leg % 3][ring % 7], intensity)
 
 def tween(duration, end, start = None):
     '''Tweens to a particular set of intensities.
@@ -162,7 +177,7 @@ def tween(duration, end, start = None):
             c = float(e - s)
             b = s + ((c/float(steps)) * (x+1))
             new.append(int(b))
-        set(0, new)
+        _set(0, new)
         show()
         time.sleep(fps)
 
@@ -178,10 +193,12 @@ def colour(colour, intensity):
     return True
 	
 def all(value):
-    set(0, [value]*18)
+    global _values
+    _values = [value]*18
+    
 
 def clear():
-    set(0, [0]*18)
+    all(0)
 
 def off():
     all(0)
