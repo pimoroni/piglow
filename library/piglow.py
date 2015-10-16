@@ -9,10 +9,10 @@ clear_on_exit = True
 auto_update = False
 
 _legs = [
-  # r   o   y   g   b   w
-  [6,  7,  8,  5,  4,  9],
-  [17, 16, 15, 13, 11, 10],
-  [0,  1,  2,  3,  14, 12]
+    # r   o   y   g   b   w
+    [6, 7, 8, 5, 4, 9],
+    [17, 16, 15, 13, 11, 10],
+    [0, 1, 2, 3, 14, 12]
 ]
 
 _map = _legs[0] + _legs[1] + _legs[2]
@@ -20,47 +20,100 @@ _map = _legs[0] + _legs[1] + _legs[2]
 _values = [0] * 18
 
 colours = {
-  "red": 0,
-  "orange": 1,
-  "yellow": 2,
-  "green": 3,
-  "blue": 4,
-  "white": 5
+    "red": 0,
+    "orange": 1,
+    "yellow": 2,
+    "green": 3,
+    "blue": 4,
+    "white": 5
 }
 
 
-def white(v): ring(5,v)
-def blue(v): ring(4,v)
-def green(v): ring(3,v)
-def yellow(v): ring(2,v)
-def orange(v): ring(1,v)
-def red(v): ring(0,v)
+def white(v): ring(5, v)
 
-def arm1(v): arm(0,v)
-def arm2(v): arm(1,v)
-def arm3(v): arm(2,v)
 
-def led1(v): set(0,v)
-def led2(v): set(1,v)
-def led3(v): set(2,v)
-def led4(v): set(3,v)
-def led5(v): set(4,v)
-def led6(v): set(5,v)
-def led7(v): set(6,v)
-def led8(v): set(7,v)
-def led9(v): set(8,v)
-def led10(v): set(9,v)
-def led11(v): set(10,v)
-def led12(v): set(11,v)
-def led13(v): set(12,v)
-def led14(v): set(13,v)
-def led15(v): set(14,v)
-def led16(v): set(15,v)
-def led17(v): set(16,v)
-def led18(v): set(17,v)
+def blue(v): ring(4, v)
 
-def arm(x,y): leg(x - 1,y)
-def spoke(x,y): leg(x - 1,y)
+
+def green(v): ring(3, v)
+
+
+def yellow(v): ring(2, v)
+
+
+def orange(v): ring(1, v)
+
+
+def red(v): ring(0, v)
+
+
+def arm1(v): arm(0, v)
+
+
+def arm2(v): arm(1, v)
+
+
+def arm3(v): arm(2, v)
+
+
+def led1(v): set(0, v)
+
+
+def led2(v): set(1, v)
+
+
+def led3(v): set(2, v)
+
+
+def led4(v): set(3, v)
+
+
+def led5(v): set(4, v)
+
+
+def led6(v): set(5, v)
+
+
+def led7(v): set(6, v)
+
+
+def led8(v): set(7, v)
+
+
+def led9(v): set(8, v)
+
+
+def led10(v): set(9, v)
+
+
+def led11(v): set(10, v)
+
+
+def led12(v): set(11, v)
+
+
+def led13(v): set(12, v)
+
+
+def led14(v): set(13, v)
+
+
+def led15(v): set(14, v)
+
+
+def led16(v): set(15, v)
+
+
+def led17(v): set(16, v)
+
+
+def led18(v): set(17, v)
+
+
+def arm(x, y): leg(x - 1, y)
+
+
+def spoke(x, y): leg(x - 1, y)
 
 
 def show():
@@ -75,9 +128,9 @@ def get():
 def set(leds, value):
     if isinstance(value, list) and isinstance(leds, int):
         offset = leds
-        leds = [(offset+x)%18 for x in range(len(value))]
+        leds = [(offset + x) % 18 for x in range(len(value))]
     if isinstance(leds, list):
-        leds = [ _map[l] for l in leds ]
+        leds = [_map[l] for l in leds]
     elif isinstance(leds, int):
         leds = _map[leds]
     _set(leds, value)
@@ -179,7 +232,7 @@ def tween(duration, end, start=None):
     if not len(end) == 18:
         raise ValueError("Requires list of 18 values")
 
-    fps = 1.0/60
+    fps = 1.0 / 60
     steps = int(duration / fps)
 
     if start is None:
@@ -191,7 +244,7 @@ def tween(duration, end, start=None):
             s = start[y]
             e = end[y]
             c = float(e - s)
-            b = s + ((c/float(steps)) * (x+1))
+            b = s + ((c / float(steps)) * (x + 1))
             new.append(int(b))
         _set(0, new)
         show()
@@ -212,13 +265,13 @@ def colour(colour, intensity):
             return True
         else:
             raise ValueError("Invalid Colour")
-    ring(colour-1, intensity)
+    ring(colour - 1, intensity)
     return True
 
 
 def all(value):
     global _values
-    _values = [value]*18
+    _values = [value] * 18
 
 
 def clear():
@@ -233,5 +286,6 @@ def off():
 def _exit():
     if clear_on_exit:
         off()
+
 
 atexit.register(_exit)

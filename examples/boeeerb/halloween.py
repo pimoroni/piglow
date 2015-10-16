@@ -19,11 +19,13 @@ sleep_period = 0.001
 piglow.all(0)
 
 # We only want to select the Red, Orange and Yellow LEDs (roy)
-roy_leds = [ "01","02","03", "07", "08", "09", "13","14", "15" ]
+roy_leds = ["01", "02", "03", "07", "08", "09", "13", "14", "15"]
+
 
 def random_brightness():
-    sleep(random.uniform(0,sleep_period))
-    return random.randint(0,255)
+    sleep(random.uniform(0, sleep_period))
+    return random.randint(0, 255)
+
 
 while True:
     # Switch one random roy LED to one random brightness

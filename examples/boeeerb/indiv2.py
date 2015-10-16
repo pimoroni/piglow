@@ -24,4 +24,4 @@ while True:
     piglow.led(colour, val)
     sleep(0.2)
 
-    colour = colour + 1
+    colour += 1
