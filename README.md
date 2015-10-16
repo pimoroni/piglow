@@ -4,7 +4,11 @@ This repository contains the library and examples for the PiGlow board.
 
 ## Easy Install
 
-To install on your Raspberry Pi, make sure you're running Raspbian, open LXTerminal or make your way to the terminal and run:
+Just run our installer. To do this fire up Terminal which you'll find in Menu -> Accessories -> Terminal on your Raspberry Pi desktop like so:
+
+![Finding the terminal](terminal.jpg)
+
+In the new terminal window, run our easy installer by typing:
 
 ```bash
 curl get.pimoroni.com/piglow | bash
