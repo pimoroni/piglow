@@ -1,0 +1,18 @@
+Change Log
+==========
+
+1.2
+---
+- Promoted to stable
+- "set" now defaults to a sensible LED order, wrapping "_set"
+- Call "_set" directly for old bahaviour
+
+1.1dev
+------
+- Made code-compatible with Jason Barnett's PiGlow library
+- renamed my 'led' method to 'single'
+- wrapped inherited 'set' to automatically call 'update'
+
+1.0dev
+-------
+- Initial experimental module

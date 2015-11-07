@@ -1,0 +1,4 @@
+include README.md
+include setup.py
+include pimglow.py
+include CHANGELOG.txt
