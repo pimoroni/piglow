@@ -273,6 +273,9 @@ def all(value):
     global _values
     _values = [value] * 18
 
+    if auto_update:
+        show()
+
 
 def clear():
     all(0)
