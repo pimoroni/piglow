@@ -1,5 +1,9 @@
 ![Piglow](piglow-logo.jpg)
 
+The PiGlow is a small add on board for the Raspberry Pi that provides 18 individually controllable LEDs.
+
+Learn more: https://shop.pimoroni.com/products/piglow
+
 This repository contains the library and examples for the PiGlow board.
 
 ## Easy Install
