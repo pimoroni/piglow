@@ -15,7 +15,7 @@ Just run our installer. To do this fire up Terminal which you'll find in Menu ->
 In the new terminal window, run our easy installer by typing:
 
 ```bash
-curl get.pimoroni.com/piglow | bash
+curl -sS get.pimoroni.com/piglow | bash
 ```
 
 This script will install the library and copy the examples in this repository to `~/Pimoroni/piglow`
