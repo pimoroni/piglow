@@ -37,7 +37,7 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: System :: Hardware']
 
 setup(name		= 'piglow',
-	version		= '1.2.1',
+	version		= '1.2.3',
 	author		= 'Philip Howard',
 	author_email	= 'phil@pimoroni.com',
 	description	= 'A module to drive the Pimoroni PiGlow board, based on the sn3218 i2c LED controller',
