@@ -1,18 +1,31 @@
 Change Log
 ==========
 
-1.2
----
-- Promoted to stable
-- "set" now defaults to a sensible LED order, wrapping "_set"
-- Call "_set" directly for old bahaviour
+1.2.3
 
-1.1dev
-------
-- Made code-compatible with Jason Barnett's PiGlow library
-- renamed my 'led' method to 'single'
-- wrapped inherited 'set' to automatically call 'update'
+* Removed ref to pimglow.py in MANIFEST
+* Added LICENSE.txt
 
-1.0dev
--------
-- Initial experimental module
+1.2.2
+
+* Fixed legs.py for Python3 compatibility
+
+1.2.1
+
+* Tweaks and tidying up  
+
+1.2.0
+
+* Promoted to stable
+* "set" now defaults to a sensible LED order, wrapping "_set"
+* Call "_set" directly for old bahaviour
+
+1.1.0
+
+* Made code-compatible with Jason Barnett's PiGlow library
+* renamed my 'led' method to 'single'
+* wrapped inherited 'set' to automatically call 'update'
+
+1.0.0
+
+* Initial experimental module
