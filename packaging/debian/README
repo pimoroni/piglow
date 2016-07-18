@@ -1,0 +1,12 @@
+README
+
+Piglow provides 18 individually controllable LEDs. LED brightness can be controlled precisely using the SN3218 PWM driver over i2c.
+
+Learn more: https://shop.pimoroni.com/products/piglow
+For examples run: `curl -sS get.pimoroni.com/piglow | bash`
+
+IMPORTANT
+
+Piglow requires i2c.
+To enable run `curl get.pimoroni.com/i2c | bash`
+or use raspi-config and reboot your Raspberry Pi.
