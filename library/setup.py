@@ -1,6 +1,7 @@
 #!/usr/bin/env python
+
 """
-Copyright (c) 2014 Pimoroni
+Copyright (c) 2013 Pimoroni
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -36,16 +37,17 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: Software Development',
                'Topic :: System :: Hardware']
 
-setup(name		= 'piglow',
-	version		= '1.2.3',
-	author		= 'Philip Howard',
-	author_email	= 'phil@pimoroni.com',
-	description	= 'A module to drive the Pimoroni PiGlow board, based on the sn3218 i2c LED controller',
-	long_description= open('README.md').read() + open('CHANGELOG.txt').read(),
-	license		= 'MIT',
-	keywords	= 'Raspberry Pi sn3218 PiGlow i2c',
-	url		= 'http://www.pimoroni.com',
-	classifiers     = classifiers,
-	py_modules	= ['piglow'],
-	install_requires= ['sn3218 >= 1.1']
+setup(
+    name            = 'piglow',
+    version         = '1.2.3',
+    author          = 'Philip Howard',
+    author_email    = 'phil@pimoroni.com',
+    description     = 'A module to drive the Pimoroni PiGlow board, based on the sn3218 i2c LED controller',
+    long_description= open('README.txt').read() + open('CHANGELOG.txt').read(),
+    license         = 'MIT',
+    keywords        = 'Raspberry Pi sn3218 PiGlow i2c',
+    url             = 'http://www.pimoroni.com',
+    classifiers     = classifiers,
+    py_modules      = ['piglow'],
+    install_requires= ['sn3218 >= 1.1']
 )
