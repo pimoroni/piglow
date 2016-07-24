@@ -1,5 +1,7 @@
-import piglow
 import time
+
+import piglow
+
 
 for x in range(18):
     piglow.led(x + 1, 100)

@@ -1,16 +1,18 @@
 #!/usr/bin/env python
+
 ##################################################
 ## Switch only yellow, orange and red to random ##
 ## brightness                                   ##
 ## Example by tng - @TommyBobbins               ##
 ##################################################
 
+import random
+from time import sleep
+
 import piglow
 
-piglow.auto_update = True
 
-from time import sleep
-import random
+piglow.auto_update = True
 
 # Maximum random sleep between switching an LED on or off
 sleep_period = 0.001
