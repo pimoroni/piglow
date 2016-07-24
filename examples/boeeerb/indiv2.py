@@ -1,12 +1,15 @@
 #!/usr/bin/env python
+
 ##################################################
 ## Switch each colour on in sequence on and off ##
 ##                                              ##
 ## Example by Jason - @Boeeerb                  ##
 ##################################################
 
-import piglow
 from time import sleep
+
+import piglow
+
 
 piglow.auto_update = True
 
