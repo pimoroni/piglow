@@ -1,6 +1,11 @@
-import sn3218
 import atexit
 import time
+
+try:
+    import sn3218
+except ImportError:
+    exit("This library requires the sn3218 module\nInstall with: sudo pip install sn3218")
+
 
 sn3218.enable()
 sn3218.enable_leds(0b111111111111111111)

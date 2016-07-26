@@ -1,5 +1,7 @@
 import time
+
 import piglow
+
 
 piglow.auto_update = True
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 """
 An interface for creating custom waves on the PiGlow.
@@ -8,8 +8,13 @@ import math
 from itertools import tee
 from time import sleep
 
-import numpy
+try:
+    import numpy
+except ImportError:
+    exit("This library requires the numpy module\nInstall with: sudo pip install numpy")
+
 import piglow
+
 
 # organised by rings (inner ring first)
 LEDS = [
