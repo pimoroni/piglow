@@ -1,13 +1,16 @@
 #!/usr/bin/env python
+
 ######################################
 ## A binary clock using the PiGlow  ##
 ##                                  ##
 ##  Example by Jason - @Boeeerb     ##
 ######################################
 
-import piglow
-from time import sleep
 from datetime import datetime
+from time import sleep
+
+import piglow
+
 
 piglow.auto_update = True
 

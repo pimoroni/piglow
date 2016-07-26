@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 import time
+
 import piglow
+
 
 while True:
     for x in range(100):

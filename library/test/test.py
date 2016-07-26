@@ -6,7 +6,15 @@
 # Once running you'll need to press ctrl-C to cancel stop the script
 
 import time
-from smbus import SMBus
+
+try:
+    from smbus import SMBus
+except ImportError:
+    if sys.version_info[0] < 3:
+        exit("This library requires python-smbus\nInstall with: sudo apt-get install python-smbus")
+    elif sys.version_info[0] == 3:
+        exit("This library requires python3-smbus\nInstall with: sudo apt-get install python3-smbus")
+
 
 # command register addresses for the SN3218 IC used in PiGlow
 CMD_ENABLE_OUTPUT = 0x00

@@ -1,12 +1,15 @@
 #!/usr/bin/env python
+
 #########################################################
 ## Set each arm of the PiGlow to a specific brightness ##
 ##                                                     ##
 ##  Example by Jason - @Boeeerb                        ##
 #########################################################
 
-import piglow
 from time import sleep
+
+import piglow
+
 
 piglow.auto_update = True
 

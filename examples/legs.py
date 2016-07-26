@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 import time
+
 import piglow
+
 
 i = 0
 x = 0
