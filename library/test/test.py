@@ -6,6 +6,7 @@
 # Once running you'll need to press ctrl-C to cancel stop the script
 
 import time
+from sys import exit, version_info
 
 try:
     from smbus import SMBus

@@ -7,6 +7,7 @@ An interface for creating custom waves on the PiGlow.
 import math
 from itertools import tee
 from time import sleep
+from sys import exit
 
 try:
     import numpy
