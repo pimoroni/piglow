@@ -1,3 +1,9 @@
+piglow (1.2.4) stable; urgency=low
+
+  * Added __version__ to module
+
+ -- Phil Howard <phil@pimoroni.com>  Thu, 10 Nov 2016 00:00:00 +0000
+
 piglow (1.2.3) UNRELEASED; urgency=low
 
   * Removed ref to pimglow.py in MANIFEST
