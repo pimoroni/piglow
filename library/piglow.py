@@ -7,7 +7,7 @@ try:
 except ImportError:
     exit("This library requires the sn3218 module\nInstall with: sudo pip install sn3218")
 
-__version__ = '1.2.3'
+__version__ = '1.2.4'
 
 sn3218.enable()
 sn3218.enable_leds(0b111111111111111111)
