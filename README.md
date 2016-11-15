@@ -6,19 +6,49 @@ Learn more: https://shop.pimoroni.com/products/piglow
 
 This repository contains the library and examples for the PiGlow board.
 
-## Easy Install
+##Installation
 
-Just run our installer. To do this fire up Terminal which you'll find in Menu -> Accessories -> Terminal on your Raspberry Pi desktop like so:
+**Full install ( recommended ):**
+
+We've created a super-easy installation script that will install all pre-requisites and get your Piglow up and running in a jiffy. To run it fire up Terminal which you'll find in Menu -> Accessories -> Terminal on your Raspberry Pi desktop like so:
 
 ![Finding the terminal](terminal.jpg)
 
 In the new terminal window, run our easy installer by typing:
 
 ```bash
-curl -sS get.pimoroni.com/piglow | bash
+curl -sS https://get.pimoroni.com/piglow | bash
 ```
 
-This script will install the library and copy the examples in this repository to `~/Pimoroni/piglow`
+If you choose to download examples you'll find them in `/home/pi/Pimoroni/piglow/`.
+
+**Library install for Python 3:**
+
+on Raspbian:
+
+```bash
+sudo apt-get install python3-piglow
+```
+other environments: 
+
+```bash
+sudo pip3 install piglow
+```
+
+**Library install for Python 2:**
+
+on Raspbian:
+
+```bash
+sudo apt-get install python-piglow
+```
+other environments: 
+
+```bash
+sudo pip2 install piglow
+```
+
+In all cases you will have to enable the i2c bus.
 
 ## Backwards Compatibility
 
