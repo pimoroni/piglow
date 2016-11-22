@@ -50,6 +50,12 @@ sudo pip2 install piglow
 
 In all cases you will have to enable the i2c bus.
 
+## Documentation & Support
+
+* PiGlow GPIO Pinout - https://pinout.xyz/pinout/piglow
+* Function reference - http://docs.pimoroni.com/piglow/
+* Get help - http://forums.pimoroni.com/c/support
+
 ## Backwards Compatibility
 
 The PiGlow Python library is designed to support examples written for Jason's PiGlow library found here: https://github.com/Boeeerb/PiGlow
