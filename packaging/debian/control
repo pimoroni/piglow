@@ -13,7 +13,7 @@ Architecture: all
 Section: python
 Depends: ${misc:Depends}, ${python:Depends}, python-sn3218
 Suggests: i2c-tools
-Description: python library designed to drive Piglow.
+Description: Python library for the Pimoroni PiGlow.
  Piglow provides 18 individually controllable LEDs. LED brightness
  can be controlled precisely using the SN3218 PWM driver over i2c. 
  .
@@ -24,7 +24,7 @@ Architecture: all
 Section: python
 Depends: ${misc:Depends}, ${python3:Depends}, python3-sn3218
 Suggests: i2c-tools
-Description: python library designed to drive Piglow.
+Description: Python library for the Pimoroni PiGlow.
  Piglow provides 18 individually controllable LEDs. LED brightness
  can be controlled precisely using the SN3218 PWM driver over i2c. 
  .
