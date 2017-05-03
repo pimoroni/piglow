@@ -6,7 +6,7 @@ Learn more: https://shop.pimoroni.com/products/piglow
 
 This repository contains the library and examples for the PiGlow board.
 
-##Installation
+## Installation
 
 **Full install ( recommended ):**
 
@@ -90,7 +90,7 @@ piglow.auto_update = True
 
 This will turn on auto update, refreshing the PiGlow after each change so you don't have to.
 
-##Function Reference
+## Function Reference
 
 ### Settings
 * `piglow.auto_update` - Set to True or False, determines if the PiGlow should automatically update after each LED change
@@ -118,7 +118,7 @@ The `set` method accepts a list of LEDs, a list of values, or a single LED or va
 
 `piglow.set(0,[50,50,50])` - let the 3 LEDs starting at index 0 to 50 brightness
 
-##Other support for PiGlow
+## Other support for PiGlow
 
 **Gordon Henderson** (@drogon on Twitter) has very kindly added support for PiGlow into his very popular wiringPi library and even includes a basic command line tool that you can use to control your PiGlow! http://wiringpi.com/dev-lib/piglow/
 
@@ -130,7 +130,7 @@ The `set` method accepts a list of LEDs, a list of values, or a single LED or va
 
 **Manuel Ernst** has created a Node.js library: https://github.com/zaphod1984/node-piglow
 
-##More information
+## More information
 
 For more information the datasheet for the SN3218 IC is included in this repository which outlines the complete communication protocol for the chip.
 
@@ -142,6 +142,6 @@ For those wanting to wire up their PiGlow in other ways these are the GPIO pins 
 - P3 (SDA)
 - P5 (SCL)
 
-##Special Thanks
+## Special Thanks
 
 A special thanks for Jason Barnett for carrying the PiGlow torch with his original library.
