@@ -2,16 +2,10 @@ import atexit
 import time
 from sys import exit
 
-try:
-    import sn3218
-except ImportError:
-    exit("This library requires the sn3218 module\nInstall with: sudo pip install sn3218")
 
 __version__ = '1.2.4'
 
-sn3218.enable()
-sn3218.enable_leds(0b111111111111111111)
-
+_is_setup = False
 clear_on_exit = True
 auto_update = False
 
@@ -126,6 +120,7 @@ def spoke(x, y): leg(x - 1, y)
 def show():
     """Output the contents of the values list to PiGlow."""
 
+    setup()
     sn3218.output(_values)
 
 
@@ -314,4 +309,21 @@ def _exit():
         off()
 
 
-atexit.register(_exit)
+def setup():
+    global _is_setup, sn3218
+
+    if _is_setup:
+        return True
+
+    try:
+        import sn3218
+    except ImportError:
+        raise ImportError("This library requires the sn3218 module\nInstall with: sudo pip install sn3218")
+
+    sn3218.enable()
+    sn3218.enable_leds(0b111111111111111111)
+
+    atexit.register(_exit)
+
+    _is_setup = True
+
