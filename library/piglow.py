@@ -177,7 +177,7 @@ def _set(leds, value):
 def ring(ring_index, value):
     """Set the brightness of a specific ring"""
 
-    ring_index %= 7
+    ring_index %= 6
     _set([_legs[0][ring_index], _legs[1][ring_index], _legs[2][ring_index]], value)
 
 
@@ -227,7 +227,7 @@ def single(leg_index, ring_index, intensity):
 
     """
 
-    _set(_legs[leg_index % 3][ring_index % 7], intensity)
+    _set(_legs[leg_index % 3][ring_index % 6], intensity)
 
 
 def tween(duration, end, start=None):
