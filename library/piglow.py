@@ -248,7 +248,7 @@ def tween(duration, end, start=None):
     steps = int(duration / fps)
 
     if start is None:
-        start = _values
+        start = _values.copy()
 
     for x in range(steps):
         new = []
