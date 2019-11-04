@@ -1,4 +1,7 @@
+from __future__ import division
+
 import atexit
+import operator
 import time
 from sys import exit
 
@@ -248,18 +251,19 @@ def tween(duration, end, start=None):
     steps = int(duration / fps)
 
     if start is None:
-        start = _values
+        start = list(_values)
 
+    deltas = map(operator.sub, end, start)
+    deltas_per_frame = [d / steps for d in deltas]
+
+    new = start
     for x in range(steps):
-        new = []
-        for y in range(18):
-            s = start[y]
-            e = end[y]
-            c = float(e - s)
-            b = s + ((c / float(steps)) * (x + 1))
-            new.append(int(b))
-        _set(0, new)
-        show()
+        new = list(map(operator.add, new, deltas_per_frame))
+        new_ints = [int(round(n)) for n in new]
+        _set(0, new_ints)
+        # avoid double write
+        if not auto_update:
+            show()
         time.sleep(fps)
 
 
