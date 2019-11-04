@@ -6,7 +6,7 @@ import time
 from sys import exit
 
 
-__version__ = '1.2.4'
+__version__ = '1.2.5'
 
 _is_setup = False
 clear_on_exit = True

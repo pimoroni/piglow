@@ -1,3 +1,11 @@
+1.2.5
+-----
+
+* Improved docstrings
+* Defer setup to avoid import-time side effects. PR #17
+* Fix issue with modulo. PR #21
+* Fix & optimise tweeing. PR #23
+
 1.2.4
 -----
 
