@@ -251,7 +251,7 @@ def tween(duration, end, start=None):
     steps = int(duration / fps)
 
     if start is None:
-        start = _values.copy()
+        start = list(_values)
 
     deltas = map(operator.sub, end, start)
     deltas_per_frame = [d / steps for d in deltas]
@@ -259,7 +259,7 @@ def tween(duration, end, start=None):
     new = start
     for x in range(steps):
         new = list(map(operator.add, new, deltas_per_frame))
-        new_ints = [round(n) for n in new]
+        new_ints = [int(round(n)) for n in new]
         _set(0, new_ints)
         # avoid double write
         if not auto_update:
